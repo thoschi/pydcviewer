@@ -898,11 +898,11 @@ class zoom():
       self.win    = -1      # the zoom factor that is calculated from window- and capture-dimensions
 
    def zoomplus(self):
-      self.user = self.user + 0.2 if self.user < self.max else self.max
+      self.user = min(self.user + 0.2, self.max)
    def zoomreset(self):
       self.user = 1
    def zoomminus(self):
-      self.user = self.user - 0.2 if self.user > self.min else self.min 
+      self.user = max(self.user - 0.2, self.min)
    def up(self, capres):  # todo - restrict
       self.pos = self.pos[0], self.pos[1] - 10
       self.pos = self._keepinframe(self.pos, capres)
@@ -933,7 +933,7 @@ class zoom():
       mark_height = abs(i.delta[1])
       width_zoom = winres[0] / (mark_width * self.res[0] / winres[0])
       height_zoom = winres[1] / (mark_height * self.res[1] / winres[1])
-      self.user = min(width_zoom, height_zoom, self.max)
+      self.user = max(min(width_zoom, height_zoom, self.max), self.min)
 
    def _keepinframe(self, p, capres):
       '''make sure that zoom-pos does not cross frame borders'''
@@ -985,8 +985,8 @@ class zoom():
 
       frame = frame[y1:y2, x1:x2]
       
-      # resize to winsize TODO necessary?
-      frame = imutils.resize(frame, width = winres[0])
+      # Keep the frame and UI masks at exactly the same dimensions.
+      frame = cv2.resize(frame, winres)
       
       # paint zoom frame if painted
       return frame
