@@ -32,8 +32,8 @@ __deprecated__ = False
 __email__     = 'dev@bemailt.de'
 __license__   = 'GPL-3.0-or-later'
 __maintainer__ = 'Thomas Schröder'
-__status__    = 'Beta'
-__version__   = '0.9'
+__status__    = 'Production/Stable'
+__version__   = '1.0'
 
 # few some initial variables
 language      = 'de'
