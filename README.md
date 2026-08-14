@@ -44,6 +44,7 @@ Command line options:
 - select a camera by its device number: `python pydcviewer.py --camera 2` (uses `/dev/video2`)
 - request a starting resolution: `python pydcviewer.py --resolution 1920x1080`
 - set the initial zoom factor from 1 to 5: `python pydcviewer.py --zoom 1.5`
+- adjust automatic menu scaling: `python pydcviewer.py --ui-scale 1.5`
 - options can be combined, for example: `python pydcviewer.py -c 2 -r 1920x1080 -z 1.5`
 
 ~~For Windows there is a standalone executable in the dist directory for your convenience.~~ (not working yet)
