@@ -1,8 +1,12 @@
+altgraph==0.17.5
 imutils==0.5.4
 numpy==2.2.1
 opencv-python==4.10.0.84
 packaging==24.2
 pillow==11.1.0
+pyinstaller==6.22.0
+pyinstaller-hooks-contrib==2026.6
 pyparsing==3.2.1
 pyperclip==1.9.0
 pytesseract==0.3.13
+setuptools==84.0.0
