@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=PyDCViewer
+Comment=DokumentenkameraViewer
+Exec=/usr/bin/python3 /opt/pydcviewer/pydcviewer.py
+Terminal=false
+Type=Application
+StartupNotify=false
+Icon=/opt/pydcviewer/support/icon.svg
+Categories=Graphics;
